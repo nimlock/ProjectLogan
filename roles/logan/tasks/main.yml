@@ -1,0 +1,20 @@
+- name: Create LogAn Opt directory
+  file:
+    path: "{{ logan_home }}"
+    state: directory
+    mode: 0777
+    recurse: yes
+
+- name: Copy compose file
+  copy:
+    src: files/docker-compose.yml
+    dest: "{{ logan_home }}/docker-compose.yml"
+
+- name: Copy script
+  copy:
+    src: files/scripts/
+    dest: "{{ logan_home  }}/scripts/"
+
+- name: Start LogAn service
+  docker_service:
+    project_src: "{{ logan_home  }}"

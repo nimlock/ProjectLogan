@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   logan:
     image: python:2.7

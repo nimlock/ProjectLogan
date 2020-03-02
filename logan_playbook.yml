@@ -1,0 +1,9 @@
+---
+
+- name: Run LogAn service
+  hosts: all
+  become:
+    true
+  gather_facts: false
+  roles:
+    - logan
