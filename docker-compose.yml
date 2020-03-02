@@ -1,0 +1,12 @@
+version: '3'
+services:
+  logan:
+    image: python:2.7
+    working_dir: /usr/src/logan/
+    command: python ./main_script.py
+    container_name: logan-service
+    volumes:
+      - ./scripts:/usr/src/logan
+      - ./Input:/usr/src/logan/Input
+      - ./Output:/usr/src/logan/Output
+
